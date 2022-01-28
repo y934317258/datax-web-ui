@@ -234,6 +234,7 @@ export default {
       dataSources: [
         { value: 'mysql', label: 'mysql' },
         { value: 'oracle', label: 'oracle' },
+        { value: 'kingbase', label: 'kingbase' },
         { value: 'postgresql', label: 'postgresql' },
         { value: 'sqlserver', label: 'sqlserver' },
         { value: 'hive', label: 'hive' },
@@ -257,6 +258,9 @@ export default {
       } else if (datasource === 'oracle') {
         this.temp.jdbcUrl = 'jdbc:oracle:thin:@//{host}:{port}/{database}'
         this.temp.jdbcDriverClass = 'oracle.jdbc.OracleDriver'
+      } else if (datasource === 'kingbase') {
+        this.temp.jdbcUrl = 'jdbc:kingbase8://{host}:{port}/{database}'
+        this.temp.jdbcDriverClass = 'com.kingbase8.Driver'
       } else if (datasource === 'postgresql') {
         this.temp.jdbcUrl = 'jdbc:postgresql://{host}:{port}/{database}'
         this.temp.jdbcDriverClass = 'org.postgresql.Driver'
